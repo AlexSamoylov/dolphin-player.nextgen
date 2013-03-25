@@ -1,0 +1,18 @@
+LOCAL_PATH:= $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := rtmp
+LOCAL_SRC_FILES := rtmp.c
+LOCAL_SRC_FILES += log.c
+LOCAL_SRC_FILES += amf.c
+LOCAL_SRC_FILES += hashswf.c
+LOCAL_SRC_FILES += parseurl.c
+LOCAL_CFLAGS := -DUSE_OPENSSL=1 -I$(AVPLAYER_PATH)/jni
+LOCAL_LDFLAGS := -lz
+LOCAL_LDLIBS := -llog
+LOCAL_SHARED_LIBRARIES := ssl
+LOCAL_STATIC_LIBRARIES := crypto 
+include $(BUILD_SHARED_LIBRARY)
+#include $(BUILD_STATIC_LIBRARY)
+
+

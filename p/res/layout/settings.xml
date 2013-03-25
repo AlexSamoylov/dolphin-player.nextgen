@@ -1,0 +1,1312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0e0e0e"
+            android:paddingLeft="4dp"
+            android:text="@string/display"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowtextcolor"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textcolor"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/changethetextcolorpreference"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/colorSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_color_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowshowhiddenfiles"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/showhiddenfilesfolders"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/displayhiddenfilesandfolders"
+                    android:textColor="#4c4c4c" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/setting_hidden_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:button="@drawable/btn_check_holo_light"
+                android:checked="false"
+                android:padding="30dp"
+                android:paddingRight="7dp" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+        <!--
+		<TableRow android:id="@+id/tblrowdefaulthome"
+		android:padding="4dp">
+			<LinearLayout android:orientation="vertical"
+				android:layout_width="match_parent" android:paddingLeft="8dp"
+
+				android:layout_height="wrap_content">
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textSize="18sp"
+					android:textColor="#4c4c4c" android:textStyle="bold"
+					android:text="@string/home" />
+
+				<TextView android:layout_width="match_parent"
+					android:layout_height="wrap_content" android:singleLine="false"
+					android:paddingTop="3dp" android:textColor="#4c4c4c"
+					android:text="@string/setyourdefaulthomepath" />
+				<TextView android:id="@+id/defaulthomeselected"
+					android:textStyle="italic" android:layout_width="match_parent"
+					android:layout_height="wrap_content" android:singleLine="false"
+					android:paddingTop="3dp" android:textColor="@color/lightGray" />
+			</LinearLayout>
+			<ImageButton android:id="@+id/setting_defaulthome_button"
+				android:src="@drawable/ic_more" android:background="@color/transparent"
+				android:layout_width="match_parent" android:layout_height="match_parent"
+				android:layout_gravity="right" android:paddingRight="7dp" android:padding="3dp" />
+		</TableRow>
+        -->
+
+        <TableRow
+            android:id="@+id/tblrowsortingtype"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sortingtype"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/choosehowtosortfilesandfolders"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/sortoptionSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_sort_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0e0e0e"
+            android:paddingLeft="4dp"
+            android:text="@string/subtitle"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:id="@+id/tblrowshowsubtitles"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/showsubtitles"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/showsubtitlesifexists"
+                    android:textColor="#4c4c4c" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/setting_subtitlehide_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:button="@drawable/btn_check_holo_light"
+                android:checked="false"
+                android:padding="30dp"
+                android:paddingRight="7dp" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowsubtitlesize"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subtitlesize"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/displaysizeofsubtitle"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/subtitleSizeSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_subtitlesize_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowsubtitlefontfileselected"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fontfile"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/setyourfontfileforsubtitle"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/subtitlefontfileselected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_subtitlefontfile_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowsubtitleencodingtype"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subtitleencodingtype"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/selectyourencodingtypeofsubtitle"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/subtitleEncodingTypeSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_subtitleencoding_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0e0e0e"
+            android:paddingLeft="4dp"
+            android:text="@string/audio"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowloopaudio"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loopaudio"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/choosehowtoloopplayaudiofiles"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/audioloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_audioloop_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0e0e0e"
+            android:paddingLeft="4dp"
+            android:text="@string/video"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowloopvideo"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loopvideo"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/choosehowtoloopplayvideofiles"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/videoloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_videoloop_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+        <!-- advanced -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0e0e0e"
+            android:paddingLeft="4dp"
+            android:text="@string/advanced"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+        <!-- skip frames algorithm -->
+
+        <TableRow
+            android:id="@+id/tblrowadvancedskipframes"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/skipframesalgorithm"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/skipframesstatement"
+                    android:textColor="#4c4c4c" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/setting_skipframes_hidden_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:button="@drawable/btn_check_holo_light"
+                android:checked="false"
+                android:padding="30dp"
+                android:paddingRight="7dp" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <!-- skip bidirectional frames -->
+
+        <TableRow
+            android:id="@+id/tblrowadvancedskipbidirectionalframes"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/skipbidirectionalframes"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/skipbidirectionalframesstatement"
+                    android:textColor="#4c4c4c" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/setting_skipbidirectionalframes_hidden_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:button="@drawable/btn_check_holo_light"
+                android:checked="false"
+                android:padding="30dp"
+                android:paddingRight="7dp" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+        <!-- yuv2rgb conversion type -->
+
+        <TableRow
+            android:id="@+id/tblrowadvancedyuv2rgb"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yuv2rgbconversiontype"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/yuv2rgbconversiontypestatement"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/yuv2rgbloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_yuv2rgb_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+        <!-- Display Pixel format -->
+
+        <TableRow
+            android:id="@+id/tblrowadvanceddisplaypixelformat"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/displaypixelformat"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/displaypixelformatstatement"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/displaypixelformatloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_displaypixelformat_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+        <!-- ffmpeg fast decoding -->
+
+        <TableRow
+            android:id="@+id/tblrowadvancedffmpegfastdecoding"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/useffmpegfastdecoding"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/useffmpegfastdecodingstatement"
+                    android:textColor="#4c4c4c" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/setting_ffmpegfastdecoding_hidden_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:button="@drawable/btn_check_holo_light"
+                android:checked="false"
+                android:padding="30dp"
+                android:paddingRight="7dp" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+        <!-- Minimum Video Q Size -->
+
+        <TableRow
+            android:id="@+id/tblrowadvancedminvideoqsize"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minimumvideoqsize"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/minimumvideoqsizestatement"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/minvideoqsizeloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_minvideoqsize_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+        <!-- maximumvideoqsize -->
+
+        <TableRow
+            android:id="@+id/tblrowadvancedmaxvideoqsize"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/maximumvideoqsize"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/maximumvideoqsizestatement"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/maxvideoqsizeloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_maxvideoqsize_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+        <!-- maximum audio qsize -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+        <!-- maximumvideoqsize -->
+
+        <TableRow
+            android:id="@+id/tblrowadvancedmaxaudioqsize"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/maximumaudioqsize"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/maximumaudioqsizestatement"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/maxaudioqsizeloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_maxaudioqsize_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <!-- stream minimum video q size -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowadvancedstreamminvideoqsize"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/streamminvideoqsize"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/streamminvideoqsizestatement"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/streamminvideooqsizeloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_streamminvideoqsize_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <!-- stream maximum video q size -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowadvancedstreammaxvideoqsize"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/streammaxvideoqsize"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/streammaxvideoqsizestatement"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/streammaxvideoqsizeloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_streammaxvideoqsize_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <!-- stream maximum audio q size -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowadvancedstreammaxaudioqsize"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/streammaxaudioqsize"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/streammaxaudioqsizestatement"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/streammaxaudioqsizeloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_streammaxaudioqsize_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+        <!-- ffmpegsws_scalertype -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowadvancedswsscaler"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/swsscaler"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/swsscalerstatement"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/swsscalerloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_swsscaler_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+        <!-- debugging mode -->
+
+        <TableRow
+            android:id="@+id/tblrowadvanceddebugmode"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/debugmode"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/debugmodestatement"
+                    android:textColor="#4c4c4c" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/setting_debugmode_hidden_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:button="@drawable/btn_check_holo_light"
+                android:checked="false"
+                android:padding="30dp"
+                android:paddingRight="7dp" />
+        </TableRow>
+        <!-- avsyncmode -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#0e0e0e" />
+
+        <TableRow
+            android:id="@+id/tblrowadvancedavsyncmode"
+            android:padding="4dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/avsyncmode"
+                    android:textColor="#4c4c4c"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:text="@string/avsyncmodestatement"
+                    android:textColor="#4c4c4c" />
+
+                <TextView
+                    android:id="@+id/avsyncmodeloopSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:singleLine="false"
+                    android:textColor="@color/lightGray"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/setting_avsyncmode_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:background="@color/transparent"
+                android:contentDescription="@string/description_icon"
+                android:padding="25dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/ic_more" />
+        </TableRow>
+
+        <!--
+		<View android:layout_width="match_parent" android:layout_height="3dp"
+			android:background="#0e0e0e" />
+         
+		<TableRow android:id="@+id/tblrowskipframes"
+		android:padding="4dp">
+			<LinearLayout android:orientation="vertical"
+				android:layout_width="match_parent" android:paddingLeft="8dp"
+				android:layout_height="wrap_content">
+				<TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textSize="18sp"
+					android:textColor="@color/blue" android:textStyle="bold"
+					android:text="@string/skipvideoframes" />
+				<TextView android:layout_width="match_parent"
+					android:layout_height="wrap_content" android:singleLine="false"
+					android:paddingTop="3dp" android:textColor="@color/blue"
+					android:text="@string/skipvideoframesforseamlessviewing" />
+
+			</LinearLayout>
+			<CheckBox android:id="@+id/setting_skipframes_box"
+				android:layout_width="match_parent" android:layout_height="wrap_content"
+				android:layout_gravity="right" android:paddingRight="7dp" android:padding="3dp"
+				android:checked="false" />
+		</TableRow>
+        -->
+
+    </TableLayout>
+
+</ScrollView>

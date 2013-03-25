@@ -1,0 +1,139 @@
+#include "JniDrawer.h"
+#define TAG "JniDrawer.cpp"
+extern JavaVM *jniVM;
+
+JNIMediaPlayerDrawer::JNIMediaPlayerDrawer(JNIEnv* env, jobject thiz, jobject weakThiz)
+{
+    // Hold onto the MMediaPlayer class for use in calling the static method
+    // that posts events to the application thread.
+    jclass clazz = env->GetObjectClass(thiz);
+
+    mClass = (jclass)env->NewGlobalRef(clazz);
+
+    // We use a weak reference so the MMediaPlayer object can be garbage collected.
+    // The reference is only used as a proxy for callbacks.
+    mObject  = env->NewGlobalRef(weakThiz);
+
+    viewPortWidth = 0;
+    viewPortHeight = 0;
+
+    zoomCoeff = 1.0f;
+
+    textureSizes[0] = 128;
+    textureSizes[1] = 256;
+    textureSizes[2] = 512;
+    textureSizes[3] = 1024;
+    textureSizes[4] = 2048;
+    textureSizes[5] = 4096;
+
+    bckgTextureWidth = 2048;
+    bckgTextureHeight = 800;
+
+	textDisplay = NULL;
+	displayData = NULL;
+}
+//-----------------------------------------------------------------------------
+JNIMediaPlayerDrawer::~JNIMediaPlayerDrawer()
+{
+    // remove global references
+    JNIEnv *env;
+    (jniVM)->AttachCurrentThread(&env, NULL);
+
+    env->DeleteGlobalRef(mObject);
+    env->DeleteGlobalRef(mClass);
+
+	delete displayData;
+	displayData = NULL;
+}
+//-----------------------------------------------------------------------------
+void JNIMediaPlayerDrawer::loadTexture()
+{
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glShadeModel(GL_FLAT);
+    glColor4x(0x10000, 0x10000, 0x10000, 0x10000);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, bckgTextureWidth, bckgTextureHeight, 0, GL_RGB, GL_UNSIGNED_SHORT_5_6_5, NULL);
+
+    __android_log_print(ANDROID_LOG_INFO, TAG, "loadTexture");
+}
+//-----------------------------------------------------------------------------
+void JNIMediaPlayerDrawer::setZoomCoeff(float zoom)
+{
+    zoomCoeff = zoom;
+}
+//-----------------------------------------------------------------------------
+void JNIMediaPlayerDrawer::setViewportSize(int _width, int _height)
+{
+    viewPortWidth = _width;
+    viewPortHeight = _height;
+
+    glDeleteTextures(1, &texture);
+    glViewport(0, 0, _width, _height);
+
+    // Disable unwanted features
+    glDisable(GL_FOG);
+    glDisable(GL_LIGHTING);
+    glDisable(GL_CULL_FACE);
+    glDisable(GL_ALPHA_TEST);
+    glDisable(GL_BLEND);
+    glDisable(GL_COLOR_LOGIC_OP);
+    glDisable(GL_DITHER);
+    glDisable(GL_STENCIL_TEST);
+    glDisable(GL_DEPTH_TEST);
+    glDisable(GL_COLOR_MATERIAL);
+
+    glEnable(GL_TEXTURE_2D);
+
+    for(int i = 0; i < 6; i++)
+    {
+        if(viewPortWidth <= textureSizes[i])
+        {
+            bckgTextureWidth = textureSizes[i];
+            break;
+        }
+    }
+
+    for(int i = 0; i < 6; i++)
+    {
+        if(viewPortHeight <= textureSizes[i])
+        {
+            bckgTextureHeight = textureSizes[i];
+            break;
+        }
+    }
+
+    loadTexture();
+
+    __android_log_print(ANDROID_LOG_INFO, TAG, "setViewportSize");
+    __android_log_print(ANDROID_LOG_INFO, TAG, "bckgTextureWidth: %d", bckgTextureWidth);
+    __android_log_print(ANDROID_LOG_INFO, TAG, "bckgTextureHeight: %d", bckgTextureHeight);
+}
+//-----------------------------------------------------------------------------
+void JNIMediaPlayerDrawer::draw(int _width, int _height, uint8_t *data)
+{
+//__android_log_print(ANDROID_LOG_INFO,TAG,"calling draw with width %d,height = %d data %p",_width,_height,data);
+if(data == NULL)
+{
+	return;
+}
+if(_width>viewPortWidth){
+setViewportSize(_width,_height);
+}
+	zoomCoeff = 1.0f;
+    int rect[] = { 0, 0, _width, -_height};
+    int xOffset = (viewPortWidth - (int)(_width * zoomCoeff))/2;
+    int yOffset = (viewPortHeight - (int)(_height * zoomCoeff))/2;
+    int ySubOffset = bckgTextureHeight - (int)(_height );
+
+//__android_log_print(ANDROID_LOG_INFO,TAG,"calling draw with xOffset %d,yOffset = %d ySubOffest %d",xOffset,yOffset,ySubOffset);
+    glTexParameteriv(GL_TEXTURE_2D, GL_TEXTURE_CROP_RECT_OES, rect);
+    //glTexImage2D(GL_TEXTURE_2D, 0, 0,_width, _height, 0, GL_RGB, GL_UNSIGNED_SHORT_5_6_5, (unsigned short*)data);
+
+    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, ySubOffset, _width, _height, GL_RGB, GL_UNSIGNED_SHORT_5_6_5, (unsigned short *)data);
+
+    //glTexSubImage2D(GL_TEXTURE_2D, 0, 0, ySubOffset, _width, _height, GL_LUMINANCE, GL_UNSIGNED_SHORT, (unsigned short *)data);
+    glDrawTexfOES(xOffset, yOffset, 0, _width *zoomCoeff , _height * zoomCoeff);
+}
+

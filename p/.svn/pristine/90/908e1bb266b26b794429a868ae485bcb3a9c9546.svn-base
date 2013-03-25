@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Russian -->
+<resources>
+    <string-array name="Category">
+		<item>Основная</item>
+		<item>Предложения</item>
+		<item>Предложить функцию</item>
+		<item>Сообщить о проблеме</item>
+	</string-array>
+	<string-array name="Colors">
+		<item>Белый</item>
+		<item>Серый</item>
+		<item>Зеленый</item>
+		<item>Красный
+</item>
+		<item>Синий</item>
+		<item>Желтый</item>
+		<item>Розовый</item>
+		<item>Голубой</item>
+	</string-array>
+	<string-array name="Loop">
+		<item>Играть один раз</item>
+		<item>Играть все</item>
+		<item>Повторять выбранный</item>
+		<item>Повторять все</item>
+	</string-array>
+
+	<string-array name="Sort">
+		<item>Нет</item>
+		<item>По алфавиту</item>
+		<item>По типу</item>
+	</string-array>
+
+	<string-array name="SubtitleSize">
+		<item>Маленький</item>
+		<item>Средний</item>
+		<item>Большой</item>
+	</string-array>
+
+	<string-array name="Languages">
+		<item>Английский</item>
+		<item>Китайский</item>
+		<item>Французский</item>
+		<item>Немецкий</item>
+		<item>Итальянский</item>
+		<item>Японский</item>
+			<item>Арабский</item>
+<item>Русский</item>
+<item>Корейский</item>
+
+<item>Португальский</item>
+
+<item>Испанский</item>
+
+<item>Хинди</item>
+
+<item>Индонезийский</item>
+
+<item>Тайский</item>
+
+<item>Вьетнамский</item>
+	</string-array>
+	</resources>

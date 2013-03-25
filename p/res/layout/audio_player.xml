@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Demonstrates changing view visibility. See corresponding Java code. -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <!--
+         Here is where we put the SurfaceView, in a frame so that we can
+         stack other views on top of it.
+    -->
+
+    <FrameLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <com.broov.player.GLSurfaceView_SDL
+            android:id="@+id/glsurfaceview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@+id/hidecontainer"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#00000000"
+            android:orientation="horizontal"
+            android:weightSum="1.0" >
+
+            <LinearLayout
+                android:id="@+id/audioPanel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#333333"
+                android:orientation="horizontal"
+                android:padding="10dip"
+                android:paddingTop="20dip" >
+
+                <ImageView
+                    android:id="@+id/albumcover"
+                    android:layout_width="120dip"
+                    android:layout_height="120dip"
+                    android:contentDescription="@string/description_icon"
+                    android:src="@drawable/ic_cd" />
+
+                <FrameLayout
+                    android:id="@+id/mediaInfocontainer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#00000000"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="#333333"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10dip"
+                            android:paddingLeft="10dip" >
+
+                            <TextView
+                                android:id="@+id/songtitle"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:textColor="#33b5e5"
+                                android:textIsSelectable="false"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10dip"
+                            android:paddingLeft="10dip" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/album"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/albumname"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:textColor="#33b5e5"
+                                android:textIsSelectable="false"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10dip"
+                            android:paddingLeft="10dip" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/artist"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/artistname"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#33b5e5"
+                                android:textIsSelectable="false"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10dip"
+                            android:paddingLeft="10dip" >
+
+                            <TextView
+                                android:id="@+id/bitrate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#33b5e5"
+                                android:textIsSelectable="false"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/kbps"
+                                android:textColor="#FFFFFF"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/samplerate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="10dip"
+                                android:textColor="#33b5e5"
+                                android:textIsSelectable="false"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/bgcontainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:orientation="horizontal"
+                android:weightSum="1.0" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@color/transparent"
+                    android:orientation="vertical"
+                    android:stretchColumns="1" >
+
+                    <TableLayout
+                        android:id="@+id/controlPanel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:background="#00000000"
+                        android:stretchColumns="1" >
+
+                        <TableRow
+                            android:id="@+id/trscrolledtime"
+                            android:layout_width="fill_parent"
+                            android:paddingLeft="10dip" >
+
+                            <TextView
+                                android:id="@+id/scrolledtime"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/time_background"
+                                android:gravity="center"
+                                android:paddingBottom="20dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/time_player"
+                                android:textColor="#5E5E5E"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </TableRow>
+
+                        <TableRow android:background="#333333" >
+
+                            <TextView
+                                android:id="@+id/currenttime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:layout_weight="0.0"
+                                android:gravity="center"
+                                android:text="@string/time_player"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="#33b5e5"
+                                android:textStyle="bold" />
+
+                            <SeekBar
+                                android:id="@+id/progressbar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1.0"
+                                android:max="1000"
+                                android:paddingLeft="6dip"
+                                android:paddingRight="6dip"
+                                android:progress="0"
+                                android:progressDrawable="@drawable/scrubber_progress_horizontal_holo_dark"
+                                android:thumb="@drawable/scrubber_control_selector_holo" />
+
+                            <TextView
+                                android:id="@+id/totaltime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:layout_weight="0.0"
+                                android:contentDescription="@string/description_icon"
+                                android:gravity="center"
+                                android:text="@string/time_player"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </TableRow>
+                    </TableLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#333333"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <ImageView
+                            android:id="@+id/img_prev"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|left"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/description_icon"
+                            android:src="@drawable/ic_media_previous" >
+                        </ImageView>
+
+                        <ImageView
+                            android:id="@+id/img_backward"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/description_icon"
+                            android:src="@drawable/ic_media_rew" >
+                        </ImageView>
+
+                        <ImageView
+                            android:id="@+id/img_play"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/description_icon"
+                            android:src="@drawable/ic_media_pause" >
+                        </ImageView>
+
+                        <ImageView
+                            android:id="@+id/img_forward"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/description_icon"
+                            android:src="@drawable/ic_media_ff" >
+                        </ImageView>
+
+                        <ImageView
+                            android:id="@+id/img_next"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/description_icon"
+                            android:src="@drawable/ic_media_next" >
+                        </ImageView>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+#ifndef __JNI_DRAWER_H__
+#define __JNI_DRAWER_H__
+#include <jni.h>
+#include <stdio.h>
+#include <android/log.h>
+#include <android/bitmap.h>
+#include <GLES/gl.h>
+#define GL_GLEXT_PROTOTYPES 
+#include <GLES/glext.h>
+#include <string>
+#include <dlfcn.h>
+
+
+//-----------------------------------------------------------------------------
+// Drawer interface
+//-----------------------------------------------------------------------------
+class JNIMediaPlayerDrawer
+{
+private:
+    int viewPortWidth;
+    int viewPortHeight;
+    float zoomCoeff;
+
+    JNIMediaPlayerDrawer();
+    jclass  mClass;     // Reference to MMediaPlayer class
+    jobject mObject;    // Weak ref to MMediaPlayer Java object to call on
+	jobject textDisplay;
+	AndroidBitmapInfo bitmapInfo;
+	unsigned short *displayData;
+
+    GLuint texture;
+    void loadTexture();
+    int textureSizes[6];
+    int bckgTextureWidth;
+    int bckgTextureHeight;
+
+public:
+    JNIMediaPlayerDrawer(JNIEnv* env, jobject thiz, jobject weakThiz);
+    ~JNIMediaPlayerDrawer();
+    void draw(int _width, int _height, uint8_t *data);
+    void setViewportSize(int _width, int _height);
+    void setZoomCoeff(float zoom);
+	void setTextDisplay(void *display);
+	void stop(){};
+};
+#endif

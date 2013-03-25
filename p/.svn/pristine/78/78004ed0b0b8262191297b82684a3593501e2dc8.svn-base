@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Russian -->
+<resources>
+	<string name="app_name">Dolphin player</string>
+
+	<string name="feedback">Обратная связь</string>
+	<string name="mailid">E-mail ID (необязательно)</string>
+	<string name="submit">Отправить</string>
+	<string name="description">Описание</string>
+	<string name="category">Категория</string>
+	<string name="cancel">Отменить</string>
+	<string name="ok">ОК</string>
+
+	<string name="about">О нас</string>
+	<string name="search">Поиск</string>
+	<string name="quit">Выйти</string>
+	<string name="display">отображать</string>
+	<string name="setting">Настройки</string>
+	<string name="searchforafile">Поиск файла</string>
+	<string name="pressbackagaintoquit">Нажмите BACK ещё раз, чтобы выйти.</string>
+	<string name="cantreadfolderduetopermissions">Доступ запрещен</string>
+	<string name="setasdefaultsubtitlefont">Успешно, подзаголовок шрифта по умолчанию установлен</string>
+	<string name="setasdefaulthomepath">Успешно, установлен по умолчанию путь домой</string>
+	<string name="searching">Поиск</string>
+	<string name="searchingcurrentfilesystem">Поиск в текущей файловой системе...</string>
+	<string name="changeto">Изменить</string>
+	<string name="changetextcolor">Изменить цвет текста</string>
+	<string name="sortby">Сортировать по...</string>
+	<string name="loop">Повторить ...</string>
+	<string name="pleaseenteryourthoughtsindescription">Введите описание</string>
+	<string name="unabletoconnecttoserverpleasetryaftersometime">Не удается подключиться к серверу. Пожалуйста, попробуйте
+ через некоторое время</string>
+	<string name="calculatinginformation">Извлечение информации ...</string>
+	<string name="pathis">Путь</string>
+	<string name="textcolor">Цвет текста</string>
+	<string name="changethetextcolorpreference">Изменить цвет текста</string>
+	<string name="showhiddenfilesfolders">Показывать скрытые файлы / папки</string>
+	<string name="displayhiddenfilesandfolders">Показать скрытые файлы и папки</string>
+	<string name="subtitle">Субтитры</string>
+	<string name="hidesubtitles">Скрыть субтитры</string>
+<string name="audio">аудио</string>
+	<string name="loopaudio">Воспроизведение аудио</string>
+	<string name="video">видео</string>
+	<string name="loopvideo">Просмотр видео</string>
+	<string name="choosehowtoloopplayaudiofiles">Выберите способ воспроизведения аудио файлов в папке
+	</string>
+<string name="sortingtype">Сортировка</string>
+	<string name="choosehowtosortfilesandfolders">Выберите способ сортировки файлов и папок</string>
+	<string name="language">Язык</string>
+	<string name="chooselanguageforapplication">Выберите язык</string>
+	<string name="help">Помощь</string>
+	<string name="subtitlesize">Размер субтитров</string>
+	<string name="displaysizeofsubtitle">Размер субтитров</string>
+	<string name="showsubtitles">Показать субтитры</string>
+	<string name="showsubtitlesifexists">Показать субтитры, если файл с субтитрами доступны</string>
+	<string name="found">Найдено</string>
+	<string name="files">файл (ы)</string>
+	
+	<string name="explorer">зонд</string>
+	</resources>
